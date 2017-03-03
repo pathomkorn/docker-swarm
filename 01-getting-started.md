@@ -82,13 +82,18 @@ core@coreos1 ~ $ docker service scale httpd-cluster=1
 httpd-cluster scaled to 1
 core@coreos1 ~ $ docker service ps httpd-cluster
 ID                         NAME             IMAGE  NODE                  DESIRED STATE  CURRENT STATE                    ERROR
-7rxs4j3p3ykh1khj5dz3xyjnz  httpd-cluster.1  httpd  coreos2.ibmcloud.com  Shutdown       Shutdown less than a second ago
+7rxs4j3p3ykh1khj5dz3xyjnz  httpd-cluster.1  httpd  coreos2.ibmcloud.com  Shutdown       Shutdown 8 minutes ago
 5q0j9g08m556oh6ry91r7jrgy  httpd-cluster.2  httpd  coreos3.ibmcloud.com  Running        Running 12 minutes ago
 9sl8ylcytg8e8iupeewzszt62  httpd-cluster.3  httpd  coreos1.ibmcloud.com  Shutdown       Shutdown 8 minutes ago
+core@coreos1 ~ $ docker service scale httpd-cluster=3
+httpd-cluster scaled to 3
+```
+* Scale up httpd cluster
+```bash
 core@coreos1 ~ $ docker service ps httpd-cluster
 ID                         NAME                 IMAGE  NODE                  DESIRED STATE  CURRENT STATE            ERROR
 9hzwrfhzz9c410jog4gzuo34p  httpd-cluster.1      httpd  coreos1.ibmcloud.com  Running        Running 36 seconds ago
-7rxs4j3p3ykh1khj5dz3xyjnz   \_ httpd-cluster.1  httpd  coreos2.ibmcloud.com  Shutdown       Shutdown 47 seconds ago
+7rxs4j3p3ykh1khj5dz3xyjnz   \_ httpd-cluster.1  httpd  coreos2.ibmcloud.com  Shutdown       Shutdown 9 minutes ago
 5q0j9g08m556oh6ry91r7jrgy  httpd-cluster.2      httpd  coreos3.ibmcloud.com  Running        Running 12 minutes ago
 bptvzk30x505iad6zro53munf  httpd-cluster.3      httpd  coreos2.ibmcloud.com  Running        Running 36 seconds ago
 9sl8ylcytg8e8iupeewzszt62   \_ httpd-cluster.3  httpd  coreos1.ibmcloud.com  Shutdown       Shutdown 9 minutes ago
